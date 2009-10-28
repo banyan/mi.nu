@@ -19,10 +19,11 @@ var setStyle = function(spec, my) {
 var setBackGroundColor = function() {
 	var body = document.getElementsByTagName('body')[0];
 	var colors = [
-		"#eee",    // grey
+		"#f0f0f0", // grey
 		"#fff",    // white
-		"#00cccc", // blue
-		//"#dd42ab"  // pink
+		"00cccc", // dark_blue
+		"#3399ff", // blue
+		"#dd42ab"  // pink
 	];
 	var randnum = (Math.floor( Math.random() * colors.length ));
 

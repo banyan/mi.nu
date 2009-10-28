@@ -5,7 +5,6 @@
 
 body {
     background-repeat: no-repeat;
-    background-color: #f0f0f0;
     background-attachment: fixed;
     background-position: left top;
 	font-size: 10px;
@@ -29,8 +28,8 @@ a:visited {
 }
 
 a:hover {
-	color: #000;
-	background: #eaff00;
+	color: #fff;
+	background: #444444;
 }
 
 ul li {
@@ -47,7 +46,7 @@ ul li {
 }
 
 h1 { 
-	font-size: 1200px; 
+	font-size: 1400px; 
 	color: #fff;
 	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 	position: fixed;
