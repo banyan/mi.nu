@@ -1,7 +1,6 @@
 var Minu = function() {};
 
 Minu.MAX_H1_FONT_SIZE = 2000;
-Minu.FADE_BASE_COLOR  = '#3f3f3f';
 
 Minu.prototype = {
 
