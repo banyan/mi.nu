@@ -1,69 +1,31 @@
-var isIE = function() {
-	return /*@cc_on!@*/false; 
-};
+var Minu = function() {};
 
-var setStyle = function(spec, my) {
-	my = my || {};
-	
-	my.element     = spec.element;
-	my.declaration = spec.declaration;
+Minu.MAX_H1_FONT_SIZE = 2000;
+Minu.FADE_BASE_COLOR  = '#3f3f3f';
 
-	if (isIE()) {
-		my.element.style.cssText = my.declaration + ";";
-	} else {
-		my.element.setAttribute("style", my.declaration);
+Minu.prototype = {
+
+	init: function() {
+		this._setBackGroundColor();
+		this._setH1FontSize();
+	},
+
+	_setBackGroundColor: function() {
+		var colors = [
+			"#ffffff", // white
+			"#f0f0f0", // grey
+			"#00cccc", // dark_blue
+			"#3399ff", // blue
+			"#dd42ab"  // pink
+		];
+		var random_key = (Math.floor( Math.random() * colors.length));
+		$("body").css("background-color", colors[random_key]);
+	},
+
+	_setH1FontSize: function() {
+		var random_size = (Math.floor( Math.random() * Minu.MAX_H1_FONT_SIZE));
+		$('h1').css("font-size", random_size);
 	}
 
-};
-
-var setBackGroundColor = function() {
-	var body = document.getElementsByTagName('body')[0];
-	var colors = [
-		"#f0f0f0", // grey
-		"#fff",    // white
-		"00cccc", // dark_blue
-		"#3399ff", // blue
-		"#dd42ab"  // pink
-	];
-	var randnum = (Math.floor( Math.random() * colors.length ));
-
-	setStyle({
-		element     : body,
-		declaration : "background-color:" + colors[randnum]
-	});
-};
-
-var setListImage = function() {
-
-	var getFavicon = function(url) {
-		var parse_url = /^(?:([A-Za-z]+:))?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
-		var names = {
-			'url'    : 0,
-			'scheme' : 1,
-			'slash'  : 2,
-			'host'   : 3,
-			'port'   : 4,
-			'path'   : 5,
-			'query'  : 6,
-			'hash'   : 7
-		};
-		var result = parse_url.exec(url);
-		var favicon;
-		// tumblr は favicon の path が違うため特別対応
-		if (result[names.host].indexOf("tumblr") != -1) return 'http://assets.tumblr.com/images/favicon.gif?2';
-		favicon = result[names.scheme] + result[names.slash] + result[names.host] + '/favicon.ico';
-		return favicon;
-	};
-
-	var lists = document.getElementsByTagName('li');
-	$A(lists).each(function(li) {
-		var link = (isIE) ? li.childNodes[0].getAttribute('href') : li.down().href;
-		var favicon = (getFavicon(link));
-
-		setStyle({
-			element     : li,
-			declaration : "list-style-image:url(" + favicon + ")"
-		});
-	});
-};
+}
 
