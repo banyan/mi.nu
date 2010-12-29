@@ -22,7 +22,8 @@ Minu.prototype = {
 			"#f0f0f0", // grey
 			"#00cccc", // dark_blue
 			"#3399ff", // blue
-			"#ed0c8c"  // pink
+			"#ed0c8c", // pink
+      "#0A8EBC"  // yet another blue
 		];
 		var random_key = (Math.floor( Math.random() * colors.length));
 		this.is_background_white = (random_key === 0);
@@ -36,6 +37,4 @@ Minu.prototype = {
 			$('h1').css("color", "#ffff00");
 		}
 	}
-
 }
-

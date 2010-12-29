@@ -4,12 +4,11 @@
 }
 
 body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left top;
-	font-size: 10px;
-	font-family: Arial;
-	font-style: normal;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left top;
+	font-size: 24px;
+	font-family: 'Reenie Beanie', arial, serif;
 	color: #000;
 }
 
@@ -33,24 +32,27 @@ a:hover {
 }
 
 ul li {
-    list-style-type: none;
-    padding-left: 2px;
+	list-style-type: none;
+	padding-left: 4px;
 }
 
 #menu {
 	left: 0;
 	position: fixed;
-    height: 100%;
-    margin: 12px 0 0 18px;
-    top: 0;
+	height: 100%;
+	margin: 12px 0 0 18px;
+	top: 0;
+}
+
+#mail {
+	padding: 24px 0 0 4px;
 }
 
 h1 { 
 	font-size: 1400px; 
 	color: #fff;
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Sniglet', arial, serif;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 }
-
